@@ -1,0 +1,24 @@
+<section class="wrapper">
+  <div class="container text-center pt-5">
+    <div class="row pb-5">
+      <h2 class="fw-light card-title">Welcome to our Cocktails</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4" *ngFor="let cocktailName of cocktailNames">
+        <a [routerLink]="['/cocktails', cocktailName]" >
+          <div class="card">
+            <img
+             [src]="cocktailImageSources[cocktailName]"
+              class="card-img-top"
+              alt="Mojito Image"
+            />
+            <div class="card-overlay">
+              <h2 class="card-title">{{cocktailName}}</h2>
+              <p class="card-text">Explore our range of {{cocktailName}} !!</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

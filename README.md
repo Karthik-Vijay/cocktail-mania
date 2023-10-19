@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
+Angular CLI: 16.2.6
+Node: 18.16.0
+Package Manager: npm 9.5.1
+OS: darwin x64
+
+Angular: 16.2.9
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1602.6
+@angular-devkit/build-angular   16.2.6
+@angular-devkit/core            16.2.6
+@angular-devkit/schematics      16.2.6
+@angular/cli                    16.2.6
+@schematics/angular             16.2.6
+rxjs                            7.8.1
+typescript                      5.1.6
+zone.js                         0.13.3
+## Download source code
+
+Run `npm install` for all dependency installation. 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

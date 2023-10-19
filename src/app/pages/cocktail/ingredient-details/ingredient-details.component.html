@@ -1,0 +1,37 @@
+<section class="wrapper">
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center nomargin" data-delay="100">{{this.cocktail?.strDrink}} Ingredient Details</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]="this.cocktail?.strDrinkThumb" class="card-img-top" alt="Cocktail Image">
+            </div>
+            <!-- Start Ingredients section -->
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="ps-3 pb-2">Ingredients with measure</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of ingredientsWithMeasures; let i = index"
+                    [ngClass]="{'list-group-item-dark': i % 2 === 0, 'list-group-item-light': i % 2 !== 0}">
+                    {{ item?.ingredient }}
+                    <span *ngIf="item.measure" class="ms-5 badge-font badge bg-primary rounded-pill">{{ item?.measure}}</span>
+                  </li>
+                </ul>
+                <p class="ps-3 pt-5 card-text">{{ this.cocktail?.strInstructions }}</p>
+              </div>
+            </div>
+            <!-- End Ingredients section -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

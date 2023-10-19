@@ -1,0 +1,46 @@
+.wrapper {
+    background: #000000;
+    height: 100vh;
+    width: 100vw;
+
+    h2 {
+        color: white;
+    }
+
+    .card {
+        height: 30rem;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:hover .card-overlay p{
+            opacity: 1;
+        }
+          
+        .card-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            transition: opacity 0.3s ease;
+
+            p {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
