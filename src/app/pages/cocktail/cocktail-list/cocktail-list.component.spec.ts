@@ -34,7 +34,7 @@ describe('CocktailListComponent', () => {
 
 
   it('should load cocktail details and apply filter on successful API call', fakeAsync(() => {
-    const mockData = { drinks: [{ strDrink: 'Mojito' }, { name: 'Mojito Extra' }] };
+    const mockData = { drinks: [{ strDrink: 'Mojito' }, { strDrink: 'Mojito Extra' }] };
     cocktailServiceMock.getCocktailList.and.returnValue(of(mockData));
     component.ngOnInit();
     tick();
