@@ -7,7 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  collapsed = true;
+  
   constructor(private route: ActivatedRoute) {}
+
+  toggleCollapsed(): void {
+    this.collapsed = !this.collapsed;
+  }
 
 }

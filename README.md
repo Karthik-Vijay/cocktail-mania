@@ -1,6 +1,14 @@
 # CocktailForYou
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+## Download source code
+
+Run `npm install --dev` for all dependency installation. 
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Versions
 
 Angular CLI: 16.2.6
 Node: 18.16.0
@@ -22,13 +30,6 @@ Package                         Version
 rxjs                            7.8.1
 typescript                      5.1.6
 zone.js                         0.13.3
-## Download source code
-
-Run `npm install` for all dependency installation. 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
