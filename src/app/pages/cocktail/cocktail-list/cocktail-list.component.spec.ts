@@ -1,34 +1,44 @@
 
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, getTestBed, TestBed } from '@angular/core/testing';
+import { ComponentFixture,fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CocktailService } from 'src/app/shared/services/cocktail.service';
 import { CocktailListComponent } from './cocktail-list.component';
+import { of } from 'rxjs';
 
 describe('CocktailListComponent', () => {
-  let injector: TestBed;
-  let cocktailService: CocktailService;
   let component: CocktailListComponent;
   let fixture: ComponentFixture<CocktailListComponent>;
+  let cocktailServiceMock: jasmine.SpyObj<CocktailService>;
 
   beforeEach(() => {
+    const spy = jasmine.createSpyObj('CocktailService', ['getCocktailList']);
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule], 
       declarations: [CocktailListComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: {} },
+        { provide: ActivatedRoute, useValue: { params: of({ cocktailName: 'Mojito' }) } },
         { provide: Router, useValue: {} },
-        CocktailService
-      ],
+        { provide: CocktailService, useValue: spy }
+      ]
     });
-    injector = getTestBed();
-    cocktailService = injector.get(CocktailService);
+
     fixture = TestBed.createComponent(CocktailListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    cocktailServiceMock = TestBed.inject(CocktailService) as jasmine.SpyObj<CocktailService>;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should load cocktail details and apply filter on successful API call', fakeAsync(() => {
+    const mockData = { drinks: [{ strDrink: 'Mojito' }, { name: 'Mojito Extra' }] };
+    cocktailServiceMock.getCocktailList.and.returnValue(of(mockData));
+    component.ngOnInit();
+    tick();
+    expect(component.cocktails).toEqual(mockData.drinks);
+  }));
+
 });
