@@ -9,7 +9,7 @@ import { Observable, map} from 'rxjs';
 export class CocktailIngredientResolver {
   constructor(private cocktailService: CocktailService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+  resolve(route: ActivatedRouteSnapshot): Observable<any> {
     const cocktailId = route.paramMap.get('id');
     const cocktailName: any = route.paramMap.get('cocktailName');
     return this.cocktailService.getCocktailList(cocktailName).pipe(

@@ -9,6 +9,8 @@ import { CocktailListComponent } from './pages/cocktail/cocktail-list/cocktail-l
 import { HomeComponent } from './pages/home/home.component';
 import { IngredientDetailsComponent } from './pages/cocktail/ingredient-details/ingredient-details.component';
 import { HttpErrorInterceptor } from './shared/interceptors/server-error-interceptor';
+import { HomeModule } from './pages/home/home.module';
+import { CocktailModule } from './pages/cocktail/cocktail.module';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CocktailService } from 'src/app/shared/services/cocktail.service';
 import { takeUntilDestroyed} from '@angular/core/rxjs-interop';
@@ -8,7 +8,7 @@ import { takeUntilDestroyed} from '@angular/core/rxjs-interop';
   templateUrl: './cocktail-list.component.html',
   styleUrls: ['./cocktail-list.component.scss'],
 })
-export class CocktailListComponent {
+export class CocktailListComponent implements OnInit {
   private readonly destroy: DestroyRef = inject(DestroyRef);
   cocktailName: string = '';
   cocktails: any[] = [];
@@ -23,7 +23,6 @@ export class CocktailListComponent {
   ) { }
 
   ngOnInit() {
-
     this.route.params.pipe(takeUntilDestroyed(this.destroy)).subscribe((params: any) => {
       if (params['cocktailName']) {
         this.cocktailName = params['cocktailName'];

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CocktailService } from 'src/app/shared/services/cocktail.service';
 
 import { HeaderComponent } from './header.component';
@@ -10,11 +9,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule],
+      imports: [],
       declarations: [HeaderComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: {} },
-        { provide: Router, useValue: {} },
         CocktailService
       ],
     });

@@ -2,6 +2,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IngredientDetailsComponent } from './ingredient-details.component';
+import { of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('IngredientDetailsComponent', () => {
   let component: IngredientDetailsComponent;
@@ -9,10 +11,10 @@ describe('IngredientDetailsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, RouterTestingModule],
       declarations: [IngredientDetailsComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: {} },
+        { provide: ActivatedRoute, useValue: {data : of({ cocktailName: 'Mojito' })} },
         { provide: Router, useValue: {} }
       ],
     });
