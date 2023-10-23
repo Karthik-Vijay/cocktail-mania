@@ -9,10 +9,10 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 500) {
-           return throwError('Server error, Please try after some time !!');
+          return throwError(() => new Error('Server error, Please try after some time !!'))
         } else {
             if (!error.error || !error.error.message) {
-                    return throwError('Something went wrong, Please try after some time !!');
+                   return throwError( () => new Error('Something went wrong, Please try after some time !!'));
                 }
         }
         return throwError(error);

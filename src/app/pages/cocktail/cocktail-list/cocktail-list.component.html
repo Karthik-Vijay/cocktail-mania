@@ -3,7 +3,7 @@
     <!-- Title and Filter Cocktails -->
     <div class="row">
       <div class="col-lg-8 col-md-12">
-        <h1 class="fw-bold text-white nomargin" data-delay="100">Our Finest {{this.cocktailName}} Cocktails</h1>
+        <h2 class="fw-bold text-white nomargin" data-delay="100">Our Finest {{this.cocktailName}} Cocktails</h2>
       </div>
       <div class="col-lg-4 col-md-12">
         <select class="form-select" [(ngModel)]="filterType" (change)="applyFilter()" aria-label="Select Cocktail">
@@ -21,7 +21,7 @@
           <div class="card mb-5" (click)="goToDetails(cocktail)">
           <img [src]="cocktail?.strDrinkThumb" class="card-img-top" alt="Cocktail Image">
           <div class="card-body">
-            <span class="text-center fw-bold fs-4 card-title">{{ cocktail?.strDrink }}</span>
+            <span class="ps-3 fw-bold fs-4 card-title">{{ cocktail?.strDrink }}</span>
             <ul class="list-group list-group-flush">
               <li class="fs-5 fw-normal list-group-item font-size-sm">Category: {{ cocktail?.strCategory }}
               </li>
