@@ -1,6 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CocktailService } from 'src/app/shared/services/cocktail.service';
-
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -9,18 +7,20 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [],
       declarations: [HeaderComponent],
-      providers: [
-        CocktailService
-      ],
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should toggle the collapsed field', () => {
+    expect(component.collapsed).toBeTrue();
+    component.toggleCollapsed();
+    expect(component.collapsed).toBeFalse();
+
+  })
 });

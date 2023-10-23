@@ -2,9 +2,9 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture,fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CocktailService } from 'src/app/shared/services/cocktail.service';
 import { CocktailListComponent } from './cocktail-list.component';
 import { of } from 'rxjs';
+import { CocktailService } from '../../../shared/services/cocktail.service';
 
 describe('CocktailListComponent', () => {
   let component: CocktailListComponent;

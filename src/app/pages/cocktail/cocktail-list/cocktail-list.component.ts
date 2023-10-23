@@ -1,7 +1,7 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CocktailService } from 'src/app/shared/services/cocktail.service';
 import { takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import { CocktailService } from '../../../shared/services/cocktail.service';
 
 @Component({
   selector: 'app-cocktail-list',
@@ -40,7 +40,8 @@ export class CocktailListComponent implements OnInit {
           this.cocktails = data.drinks;
           this.applyFilter();
         },
-        error: (e: any) => this.error = e
+        error: (e: any) => {
+          this.error = e}
       }
  );
   }

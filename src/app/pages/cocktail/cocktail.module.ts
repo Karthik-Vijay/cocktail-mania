@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 import { IngredientDetailsComponent } from './ingredient-details/ingredient-details.component';
-import { CocktailIngredientResolver } from 'src/app/shared/services/cocktail-ingredient-resolver';
+import { CocktailIngredientResolver } from '../../shared/services/cocktail-ingredient-resolver';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from '../home/home.component';
 
